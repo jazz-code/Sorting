@@ -33,11 +33,20 @@ def selection_sort( arr ):
         #         print("curr",arr[cur_index])
         #         print("i",i)
         #         i += i
-        for j in range(i + 1, len(arr)):
-            if arr[j] < arr[smallest_index]:
-                smallest_index = j
-                print(j)
-
+        for temp in range(i + 1, len(arr)):
+            # print("i         : ", i)
+            # print("arr[temp] : ",arr[temp])
+            # print("arr[small]: ",arr[smallest_index])
+            # print("******")
+            if arr[temp] < arr[smallest_index]:
+                # print("if-arr[temp] : ",arr[temp])
+                # print("if-arr[small]: ",arr[smallest_index])
+                # print("******")
+                smallest_index = temp
+                # print("temp",(temp))
+                # print("small",(smallest_index))
+                # print("******")
+                # l = [4, 22, 2, 6, 3, 9, 7, 8, 30 ]
         # TO-DO: swap
         arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
 
@@ -55,9 +64,9 @@ def selection_sort( arr ):
 
 
 l = [4, 22, 2, 6, 3, 9, 7, 8, 30 ]
-print(selection_sort(l))
+# print(selection_sort(l))
 
-# TO-DO: Complete the selection_sort() function below
+# TO-DO: Complete the insertion_sort() function below
 
 def insertion_sort(arr):
     for i in range(1, len(arr)):
@@ -80,12 +89,32 @@ l = [2, 6, 3, 9, 7, 8 ]
 # print(insertion_sort(l))
 
 # TO-DO:  implement the Bubble Sort function below
+
+    # Loop through your array
+        # Compare each element to its neighbor
+        # If elements in wrong position (relative to each other, swap them)
+    # If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+
+# (start at the beginning and compare each element to its right hand neighbor. If the right hand neighbor is smaller, we swap the two neighbors.)
+l = [2, 6, 3, 9, 7, 8 ]
 def bubble_sort( arr ):
-    return
-    # for i in range(len(arr)):
-    #     while
+    # result = []
+    for i in range(len(arr) -1):
+        # index = i
+        # print("arr-i",arr[i])
+        # print("index+1 ",arr[index + 1])
+        # print("********")
+        for i in range(i + 1, len(arr) -1):
+            if arr[i] > arr[i + 1]:
+                # print("if-arr",arr[i])
+                # print("********")
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+        # for x in range(i + 1, len(arr))
+    return arr
+    # if arr[]
 # a[0:2]
-# bubble_sort(l)
+# print(bubble_sort(l))
+
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
